@@ -91,6 +91,11 @@ form button {
     margin-top: 2rem;
 }
 
+#randomize-btn {
+    background-color: #333;
+    color: #fff;
+}
+
 /* sections */
 main {
     display: flex;
@@ -149,4 +154,10 @@ main section {
   
 #instructions-btn-area #instructions-btn:hover {
     color: #666;
+}
+
+/* question error area */
+#question-error-area {
+    display: hidden;
+    color: red;
 }

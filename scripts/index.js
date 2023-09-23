@@ -7,6 +7,7 @@ const answerFourInput = document.querySelector('#answer-four')
 const submitBtn = document.querySelector('#submit-btn')
 const testRenderArea = document.querySelector('#test-render-area')
 const addTitleBtn = document.querySelector('#add-title-btn')
+const questionErrorArea = document.querySelector('#question-error-area')
 import randomize from "./modules/randomize.mjs"
 
 const addTitle = e => {
@@ -25,6 +26,14 @@ const addTitle = e => {
 
 const createTestQuestion = e => {
     e.preventDefault()
+
+    questionErrorArea.innerText = ''
+
+    if (questionInput.value === '' || answerOneInput.value === '' || answerTwoInput.value === '' || answerThreeInput.value === '' || answerFourInput.value === '') {
+        questionErrorArea.innerText = 'Error: Please fill out the entire form before submitting'
+        questionErrorArea.style.display = 'block'
+        return
+    }
 
     const test = JSON.parse(localStorage.getItem('test'))
 
@@ -119,6 +128,12 @@ const renderTest = () => {
                 </div>
             `
         })
+
+        output += `
+            <div>
+                <button type="button" id="randomize-btn" class="btn">Randomize Questions</button>
+            </div>
+        `
     }
 
     output += `
