@@ -80,3 +80,13 @@ form button {
     font-size: 16px;
     margin-top: 2rem;
 }
+
+/* sections */
+main {
+    display: flex;
+    width: 100vw;
+}
+
+main section {
+    width: 50%;
+}
