@@ -7,15 +7,7 @@ const answerFourInput = document.querySelector('#answer-four')
 const submitBtn = document.querySelector('#submit-btn')
 const testRenderArea = document.querySelector('#test-render-area')
 const addTitleBtn = document.querySelector('#add-title-btn')
-
-const randomize = arr => {
-    for (var i = arr.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1))
-        var temp = arr[i]
-        arr[i] = arr[j]
-        arr[j] = temp
-    }
-}
+import randomize from "./modules/randomize.mjs"
 
 const addTitle = e => {
     e.preventDefault()
