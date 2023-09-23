@@ -55,6 +55,18 @@ form input[type="text"] {
     margin-bottom: 2rem;
 }
 
+form label[for="question"] {
+    color: red;
+}
+
+form label[for="answer-one"] {
+    color: green;
+}
+
+form input {
+    margin: 0.1rem 0 0.5rem 0;
+}
+
   /* buttons */
 form button {
     background-color: #333;
@@ -66,9 +78,6 @@ form button {
     color: #fff;
     font-size: 14px;
     padding: 8px;
-}
-
-#delete-title-btn {
     margin-left: 3rem;
 }
 

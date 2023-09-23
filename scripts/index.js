@@ -86,7 +86,7 @@ const renderTest = () => {
         output += `
             <div>
                 <span style="font-size: 24px;">${storedTest.title}</span>
-                <button class="delete-btn" id="delete-title-btn" type="button">Delete</button>
+                <button class="delete-btn" type="button">Delete</button>
             </div>
         `
     }
@@ -101,14 +101,16 @@ const renderTest = () => {
         storedTest.questions.forEach(question => {
             output += `
                 <div>
-                    <p>${question.id}. ${question.text}</p>
+                    <p>
+                        ${question.id}. ${question.text}
+                        <button type="button" class="delete-btn btn" data-questionid=${question.id}>Delete</button>
+                    </p>
                     <ol type="a">
                         <li>${question.answers[0].content}</li>
                         <li>${question.answers[1].content}</li>
                         <li>${question.answers[2].content}</li>
                         <li>${question.answers[3].content}</li>
                     </ol>
-                    <button type="button" class="delete-btn btn" data-questionid=${question.id}>Delete</button>
                 </div>
             `
         })
