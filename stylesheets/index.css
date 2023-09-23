@@ -8,3 +8,34 @@ body {
     font-family: "Open Sans", sans-serif;
     overflow-x: hidden;
 }
+
+main {
+    margin: 0 5%;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  h1 {
+    font-size: 36px;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* forms */
+.form-group {
+    margin: 0.5rem 0;
+  }
+
+  form input[type="text"] {
+    font-size: 14px;
+    height: 28px;
+    border-radius: 3px;
+  }
+
+  #test-form-area {
+    margin-bottom: 3rem;
+  }
