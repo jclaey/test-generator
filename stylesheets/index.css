@@ -37,7 +37,7 @@ header {
     margin-bottom: 4rem;
 }
 
-  /* forms */
+/* forms */
 .form-group {
     margin: 0.5rem 0;
 }
@@ -53,7 +53,7 @@ form input[type="text"] {
 }
 
 #title-form {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
 }
 
 form label[for="question"] {
@@ -65,10 +65,10 @@ form label[for="answer-one"] {
 }
 
 form input {
-    margin: 0.1rem 0 0.5rem 0;
+    margin: 0.1rem 0 0.4rem 0;
 }
 
-  /* buttons */
+/* buttons */
 form button {
     background-color: #333;
     color: #fff;
@@ -109,7 +109,7 @@ main section {
     top: 0;
     left: 0;
     width: 300px;
-    height: 700px;
+    height: 520px;
     z-index: 1;
     transform: translateX(-100%)
 }
