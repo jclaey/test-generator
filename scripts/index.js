@@ -85,7 +85,7 @@ const renderTest = () => {
     } else {
         output += `
             <div>
-                <span>${storedTest.title}</span>
+                <span style="font-size: 24px;">${storedTest.title}</span>
                 <button class="delete-btn" id="delete-title-btn" type="button">Delete</button>
             </div>
         `
