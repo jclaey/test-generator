@@ -115,8 +115,8 @@ const renderTest = () => {
     }
 
     output += `
-        <div id="print-btn">
-            <button type="button" class="btn">Print Test</button>
+        <div>
+            <button type="button" id="print-btn" class="btn">Print Test</button>
         </div>
     `
 

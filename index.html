@@ -14,36 +14,47 @@
     </header>
     <main>
         <section id="test-form-area">
-            <form>
+            <form id="title-form">
+                <div class="form-group">
+                    <label for="title">
+                        <strong>Enter Test Title</strong>
+                    </label><br />
+                    <input type="text" id="title">
+                    <div>
+                        <button type="button" id="add-title-btn">Add Title</button>
+                    </div>
+                </div>
+            </form>
+            <form id="question-form">
                 <div class="form-group">
                     <label for="question">
                         <strong>Enter Question</strong>
-                    </label>
+                    </label><br />
                     <input type="text" id="question">
                 </div>
                 <div class="form-group">
-                    <label for="answer-1">
-                        <strong>Enter Answer</strong>
-                    </label>
-                    <input type="text" id="answer-1">
+                    <label for="answer-one">
+                        <strong>Enter Correct Answer</strong>
+                    </label><br />
+                    <input type="text" id="answer-one">
                 </div>
                 <div class="form-group">
-                    <label for="answer-2">
+                    <label for="answer-two">
                         <strong>Enter Answer</strong>
-                    </label>
-                    <input type="text" id="answer-2">
+                    </label><br />
+                    <input type="text" id="answer-two">
                 </div>
                 <div class="form-group">
-                    <label for="answer-3">
+                    <label for="answer-three">
                         <strong>Enter Answer</strong>
-                    </label>
-                    <input type="text" id="answer-3">
+                    </label><br />
+                    <input type="text" id="answer-three">
                 </div>
                 <div class="form-group">
-                    <label for="answer-4">
+                    <label for="answer-four">
                         <strong>Enter Answer</strong>
-                    </label>
-                    <input type="text" id="answer-4">
+                    </label><br />
+                    <input type="text" id="answer-four">
                 </div>
                 <button type="button" id="submit-btn">Submit Question</button>
             </form>
