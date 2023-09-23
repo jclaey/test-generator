@@ -8,6 +8,7 @@ body {
     font-family: "Open Sans", sans-serif;
     overflow-x: hidden;
     background-color: #f4f4f4;
+    transition: transform 0.3s ease;
 }
 
 main {
@@ -98,4 +99,54 @@ main {
 
 main section {
     width: 50%;
+}
+
+/* instructions div */
+#instructions {
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 700px;
+    z-index: 1;
+    transform: translateX(-100%)
+}
+  
+#instructions p {
+    margin: 1rem;
+}
+  
+#instructions p:first-of-type {
+    font-size: 24px;
+}
+  
+#instructions span {
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    cursor: pointer;
+}
+  
+.open-sidebar {
+    transform: translateX(300px)
+}
+  
+#instructions-btn-area {
+    margin-top: 1rem;
+    font-size: 18px;
+    color: #333;
+}
+  
+#instructions-btn-area #instructions-btn {
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    transition: 0.3s;
+}
+  
+#instructions-btn-area #instructions-btn:hover {
+    color: #666;
 }

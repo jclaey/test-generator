@@ -8,6 +8,9 @@
 </head>
 <body>
     <header>
+        <div id="instructions-btn-area">
+            <button id="instructions-btn">Instructions</button>
+        </div>
         <div>
             <h1>Simple Test Generator</h1>
         </div>
@@ -17,7 +20,7 @@
             <form id="title-form">
                 <div class="form-group">
                     <label for="title">
-                        <strong>Enter Test Title</strong>
+                        <strong>Add Test Title</strong>
                     </label><br />
                     <input type="text" id="title">
                     <div>
@@ -40,19 +43,19 @@
                 </div>
                 <div class="form-group">
                     <label for="answer-two">
-                        <strong>Enter Answer</strong>
+                        <strong>Enter Incorrect Answer</strong>
                     </label><br />
                     <input type="text" id="answer-two">
                 </div>
                 <div class="form-group">
                     <label for="answer-three">
-                        <strong>Enter Answer</strong>
+                        <strong>Enter Incorrect Answer</strong>
                     </label><br />
                     <input type="text" id="answer-three">
                 </div>
                 <div class="form-group">
                     <label for="answer-four">
-                        <strong>Enter Answer</strong>
+                        <strong>Enter Incorrect Answer</strong>
                     </label><br />
                     <input type="text" id="answer-four">
                 </div>
@@ -62,7 +65,17 @@
         <section id="test-render-area"></section>
     </main>
     <footer></footer>
+    <div id="instructions">
+        <span id="close-btn">&times;</span>
+        <p>Instructions:</p>
+        <p>Use the "Add Test Title" input and button to give your test a title</p>
+        <p>Use the question form and "Submit Question" button to add a question and corresponding answer choices to your test</p>
+        <p>To change your test title, enter a new title into the "Add Test Title" input and click the button</p>
+        <p>To delete your title, use the delete button next to the title</p>
+        <p>To delete questions from your test, use the delete buttons next to each question</p>
+    </div>
 
     <script src="scripts/index.js"></script>
+    <script src="scripts/sidebar.js"></script>
 </body>
 </html>
