@@ -8,6 +8,15 @@ const submitBtn = document.querySelector('#submit-btn')
 const testRenderArea = document.querySelector('#test-render-area')
 const addTitleBtn = document.querySelector('#add-title-btn')
 
+const randomize = arr => {
+    for (var i = arr.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1))
+        var temp = arr[i]
+        arr[i] = arr[j]
+        arr[j] = temp
+    }
+}
+
 const addTitle = e => {
     e.preventDefault()
 
@@ -29,27 +38,31 @@ const createTestQuestion = e => {
 
     const hasLength = test.questions.length > 0 ? true : false
 
+    const answers = [
+        {
+            content: answerOneInput.value,
+            isCorrect: true
+        },
+        {
+            content: answerTwoInput.value,
+            isCorrect: false
+        },
+        {
+            content: answerThreeInput.value,
+            isCorrect: false
+        },
+        {
+            content: answerFourInput.value,
+            isCorrect: false
+        }
+    ]
+
+    randomize(answers)
+
     const testQuestion = {
         id: hasLength ? test.questions[test.questions.length - 1].id + 1 : 1,
         text: questionInput.value,
-        answers: [
-            {
-                content: answerOneInput.value,
-                isCorrect: true
-            },
-            {
-                content: answerTwoInput.value,
-                isCorrect: false
-            },
-            {
-                content: answerThreeInput.value,
-                isCorrect: false
-            },
-            {
-                content: answerFourInput.value,
-                isCorrect: false
-            }
-        ]
+        answers
     }
 
     test.questions.push(testQuestion)
@@ -181,7 +194,7 @@ const printTest = () => {
       printWin.print()
       printWin.stop()
     }
-  }
+}
 
 renderTest()
 
