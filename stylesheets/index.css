@@ -93,7 +93,7 @@ form button {
     padding: 10px;
     border: none;
     font-size: 16px;
-    margin-top: 2rem;
+    margin: 2rem 5rem;
 }
 
 #randomize-btn {
@@ -146,7 +146,6 @@ main section {
   
 #instructions-btn-area {
     margin-top: 1rem;
-    /* font-size: 18px; */
     color: #333;
     display: flex;
     justify-content: space-between;
@@ -172,4 +171,17 @@ main section {
 #question-error-area {
     display: hidden;
     color: red;
+}
+
+/* footer */
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+}
+  
+footer a {
+    color: #2F3640;
+    font-weight: 600;
 }
