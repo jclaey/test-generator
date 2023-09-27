@@ -93,7 +93,7 @@ form button {
     padding: 10px;
     border: none;
     font-size: 16px;
-    margin: 2rem 5rem;
+    margin: 2rem 0 5rem 0;
 }
 
 #randomize-btn {
@@ -161,6 +161,11 @@ main section {
 
 #instructions-btn-area a {
     color: #333;
+    transition: 0.3s;
+}
+
+#instructions-btn-area a:hover {
+    color: #666;
 }
   
 #instructions-btn-area #instructions-btn:hover {
@@ -176,12 +181,26 @@ main section {
 /* footer */
 footer {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 50px;
+    height: 100px;
+    margin: 0 20% 0 20%;
 }
   
 footer a {
     color: #2F3640;
     font-weight: 600;
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: #666;
+}
+
+footer #footer-legal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }

@@ -14,4 +14,8 @@
     #header h2 {
         font-size: 17px;
     }
+
+    footer {
+        margin: 0 5%;
+    }
 }
