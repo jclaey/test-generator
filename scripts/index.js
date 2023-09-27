@@ -116,14 +116,14 @@ const renderTest = () => {
             output += `
                 <div>
                     <p>
-                        ${question.id}. ${question.text}
+                        ${storedTest.questions.indexOf(question) + 1}. ${question.text}
                         <button type="button" class="delete-btn btn" data-questionid=${question.id}>Delete</button>
                     </p>
                     <ol type="a">
-                        <li>${question.answers[0].content}</li>
-                        <li>${question.answers[1].content}</li>
-                        <li>${question.answers[2].content}</li>
-                        <li>${question.answers[3].content}</li>
+                        <li style="color: ${question.answers[0].isCorrect ? 'green' : 'black'}">${question.answers[0].content}</li>
+                        <li style="color: ${question.answers[1].isCorrect ? 'green' : 'black'}">${question.answers[1].content}</li>
+                        <li style="color: ${question.answers[2].isCorrect ? 'green' : 'black'}">${question.answers[2].content}</li>
+                        <li style="color: ${question.answers[3].isCorrect ? 'green' : 'black'}">${question.answers[3].content}</li>
                     </ol>
                 </div>
             `
@@ -146,6 +146,18 @@ const renderTest = () => {
 
     if (document.querySelector('#delete-title-btn') !== null) {
         document.querySelector('#delete-title-btn').addEventListener('click', deleteTitle)
+    }
+
+    if (document.querySelector('#randomize-btn') !== null) {
+        document.querySelector('#randomize-btn').addEventListener('click', e => {
+            e.preventDefault()
+            const test = JSON.parse(localStorage.getItem('test'))
+            const arr = test.questions
+            randomize(arr)
+            test.questions = arr
+            localStorage.setItem('test', JSON.stringify(test))
+            renderTest()
+        })
     }
 
     document.querySelectorAll('.delete-btn').forEach(node => node.addEventListener('click', deleteQuestion))

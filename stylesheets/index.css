@@ -37,6 +37,11 @@ header {
     margin-bottom: 4rem;
 }
 
+header h2 {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
 /* forms */
 .form-group {
     margin: 0.5rem 0;
@@ -141,8 +146,11 @@ main section {
   
 #instructions-btn-area {
     margin-top: 1rem;
-    font-size: 18px;
+    /* font-size: 18px; */
     color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
   
 #instructions-btn-area #instructions-btn {
@@ -150,6 +158,10 @@ main section {
     background-color: transparent;
     font-size: 18px;
     transition: 0.3s;
+}
+
+#instructions-btn-area a {
+    color: #333;
 }
   
 #instructions-btn-area #instructions-btn:hover {
