@@ -1,0 +1,17 @@
+@media (max-width: 640px) {
+    main {
+        flex-direction: column;
+    }
+
+    #test-form-area {
+        width: 100vw;
+    }
+
+    #test-render-area {
+        width: 100vw;
+    }
+
+    #header h2 {
+        font-size: 17px;
+    }
+}
