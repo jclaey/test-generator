@@ -40,7 +40,16 @@ header {
 header h2 {
     font-size: 18px;
     font-weight: 400;
-  }
+}
+
+header #brand {
+    display: flex;
+    align-items: center;
+}
+
+header #brand img {
+    margin-right: 1rem;
+}
 
 /* forms */
 .form-group {
