@@ -1,126 +1,45 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
-
-* {
-    box-sizing: border-box;
-}
-
 body {
-    font-family: "Open Sans", sans-serif;
-    overflow-x: hidden;
-    background-color: #f4f4f4;
     transition: transform 0.3s ease;
 }
 
 main {
     margin: 0 5%;
 }
-  
-h1 {
-    font-size: 36px;
-}
-
-a {
-    text-decoration: none;
-}
-
-button {
-    margin-top: 1rem;
-    font-size: 16px;
-    padding: 12px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-}
 
 header {
     margin: 0 5%;
-    margin-bottom: 4rem;
-}
-
-header h2 {
-    font-size: 18px;
-    font-weight: 400;
-}
-
-header #brand {
-    display: flex;
-    align-items: center;
-}
-
-header #brand img {
-    margin-right: 1rem;
-}
-
-/* forms */
-.form-group {
-    margin: 0.5rem 0;
-}
-
-form input[type="text"] {
-    font-size: 14px;
-    height: 28px;
-    border-radius: 3px;
 }
 
 #test-form-area {
-    margin-bottom: 3rem;
+    margin-right: 50px;
 }
 
-#title-form {
-    margin-bottom: 3rem;
-}
-
-form label[for="question"] {
-    color: red;
-}
-
-form label[for="answer-one"] {
-    color: green;
-}
-
-form input {
-    margin: 0.1rem 0 0.4rem 0;
-}
-
-/* buttons */
-form button {
-    background-color: #333;
-    color: #fff;
-}
-
-.delete-btn {
-    background-color: #b30000;
-    color: #fff;
-    font-size: 14px;
-    padding: 8px;
-    margin-left: 3rem;
-}
-
-#print-btn {
-    background-color: #009933;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    font-size: 16px;
-    margin: 2rem 0 5rem 0;
-}
-
-#randomize-btn {
-    background-color: #333;
-    color: #fff;
-}
-
-/* sections */
-main {
+#test-render-area {
     display: flex;
-    width: 100vw;
+    flex-direction: column;
 }
 
-main section {
-    width: 50%;
+/* FOOTER */
+
+footer {
+    height: 100px;
+    margin: 0 5rem;
 }
 
-/* instructions div */
+footer #footer-built-by {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer #footer-legal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* INSTRUCTIONS */
+
 #instructions {
     background-color: #333;
     color: #fff;
@@ -128,7 +47,7 @@ main section {
     top: 0;
     left: 0;
     width: 300px;
-    height: 520px;
+    height: 550px;
     z-index: 1;
     transform: translateX(-100%)
 }
@@ -179,37 +98,5 @@ main section {
   
 #instructions-btn-area #instructions-btn:hover {
     color: #666;
-}
-
-/* question error area */
-#question-error-area {
-    display: hidden;
-    color: red;
-}
-
-/* footer */
-footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100px;
-    margin: 0 20% 0 20%;
-}
-  
-footer a {
-    color: #2F3640;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-footer a:hover {
-    color: #666;
-}
-
-footer #footer-legal {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
+    cursor: pointer;
 }

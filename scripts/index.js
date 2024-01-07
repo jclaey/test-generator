@@ -98,9 +98,9 @@ const renderTest = () => {
         `
     } else {
         output += `
-            <div>
-                <span style="font-size: 24px;">${storedTest.title}</span>
-                <button class="delete-btn"  id="delete-title-btn" type="button">Delete</button>
+            <div class="mb-4">
+                <span class="is-size-4 mr-5">${storedTest.title}</span>
+                <button class="delete-btn button is-danger"  id="delete-title-btn" type="button">Delete</button>
             </div>
         `
     }
@@ -114,11 +114,11 @@ const renderTest = () => {
     } else {
         storedTest.questions.forEach(question => {
             output += `
-                <div>
-                    <p>
+                <div class="mb-4">
+                    <div>
                         ${storedTest.questions.indexOf(question) + 1}. ${question.text}
-                        <button type="button" class="delete-btn btn" data-questionid=${question.id}>Delete</button>
-                    </p>
+                        <button type="button" class="delete-btn button is-danger is-small" data-questionid=${question.id}>Delete</button>
+                    </div>
                     <ol type="a">
                         <li style="color: ${question.answers[0].isCorrect ? 'green' : 'black'}">${question.answers[0].content}</li>
                         <li style="color: ${question.answers[1].isCorrect ? 'green' : 'black'}">${question.answers[1].content}</li>
@@ -131,14 +131,14 @@ const renderTest = () => {
 
         output += `
             <div>
-                <button type="button" id="randomize-btn" class="btn">Randomize Questions</button>
+                <button type="button" id="randomize-btn" class="button mb-2">Randomize Questions</button>
             </div>
         `
     }
 
     output += `
         <div>
-            <button type="button" id="print-btn" class="btn">Print Test</button>
+            <button type="button" id="print-btn" class="button">Print Test</button>
         </div>
     `
 
@@ -190,7 +190,7 @@ const printTest = () => {
     } else {
       output += `
         <div style="margin: 2rem 0 5rem 0; font-family: sans-serif; font-size: 32px;">
-          <h2 style="text-align: center;">${storedTest.title}</h2>
+          <h2 style="text-align: center;" class="is-size-1">${storedTest.title}</h2>
         </div>
       `
   

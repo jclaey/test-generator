@@ -15,89 +15,108 @@
     <meta name="author" content="Jason Claeys">
     <meta name="description" content="A simple, easy-to-use, free multiple choice test generator. Create and print tests with ease. Completely free to use.">
     <meta name="keywords" content="simple test generator, free test generator, multiple choice test generator, create multiple versions of a test, randomize answer choices, print test, create and print test">
+    <link rel="stylesheet" href="stylesheets/bulma/css/bulma.min.css">
     <link rel="stylesheet" href="stylesheets/index.css">
-    <link rel="stylesheet" href="stylesheets/mobile.css">
+    <!-- <link rel="stylesheet" href="stylesheets/mobile.css"> -->
     <title>Simple Test Generator</title>
 </head>
 <body>
     <header>
-        <div id="instructions-btn-area">
+        <div id="instructions-btn-area" class="mb-6">
             <button id="instructions-btn">Instructions</button>
-            <a href="https://simplechecklistgenerator.com" target="_blank">Checklist Generator</a>
+            <a href="https://simplechecklistgenerator.com" target="_blank" class="button is-link is-light">Checklist Generator</a>
         </div>
-        <div>
-            <div id="brand">
-                <img src="./images/simple_test_logo.png" alt="Simple Test Generator logo" height="50" width="50">
-                <h1>Simple Test Generator</h1>
+        <div class="mb-6">
+            <div id="brand" style="display: flex; align-items: center;" class="mb-4">
+                <figure class="image is-96x96">
+                    <img src="./images/simple_test_logo.png" alt="Simple Test Generator logo" height="50" width="50">
+                </figure>
+                <h1 class="title is-1">Simple Test Generator</h1>
             </div>
-            <h2>The easiest test generator on the internet.</h2>
+            <h2 class="subtitle is-2">The easiest test generator on the internet.</h2>
         </div>
     </header>
-    <main>
-        <section id="test-form-area">
-            <form id="title-form">
-                <div class="form-group">
-                    <label for="title">
-                        <strong>Add Test Title</strong>
-                    </label><br />
-                    <input type="text" id="title">
+    <main class="mb-6">
+        <div class="columns">
+            <div class="column is-half">
+                <section id="test-form-area" class="field">
+                    <form id="title-form" class="mb-5">
+                        <div class="field">
+                            <label for="title" class="label">
+                                Add Test Title
+                            </label>
+                            <div class="control">
+                                <input type="text" id="title" class="input">
+                            </div>
+                            <div>
+                                <button type="button" id="add-title-btn" class="button">Add Title</button>
+                            </div>
+                        </div>
+                    </form>
                     <div>
-                        <button type="button" id="add-title-btn">Add Title</button>
+                        <h2 class="subtitle is-2">Question Form</h2>
+                        <form id="question-form">
+                            <div class="field">
+                                <label for="question" class="label">
+                                    <strong>Enter Test Question</strong>
+                                </label>
+                                <div class="control">
+                                    <input type="text" id="question" class="input">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="answer-one" class="label">
+                                    <strong>Enter Correct Answer</strong>
+                                </label>
+                                <div class="control">
+                                    <input type="text" id="answer-one" class="input">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="answer-two" class="label">
+                                    <strong>Enter Incorrect Answer</strong>
+                                </label>
+                                <div class="control">
+                                    <input type="text" id="answer-two" class="input">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="answer-three" class="label">
+                                    <strong>Enter Incorrect Answer</strong>
+                                </label>
+                                <div class="control">
+                                    <input type="text" id="answer-three" class="input">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="answer-four" class="label">
+                                    <strong>Enter Incorrect Answer</strong>
+                                </label>
+                                <input type="text" id="answer-four" class="input">
+                            </div>
+                            <p id="question-error-area"></p>
+                            <button type="button" id="submit-btn" class="button">Submit Question</button>
+                        </form>
                     </div>
-                </div>
-            </form>
-            <div>
-                <h2>Question Form</h2>
-                <form id="question-form">
-                    <div class="form-group">
-                        <label for="question">
-                            <strong>Enter Test Question</strong>
-                        </label><br />
-                        <input type="text" id="question">
-                    </div>
-                    <div class="form-group">
-                        <label for="answer-one">
-                            <strong>Enter Correct Answer</strong>
-                        </label><br />
-                        <input type="text" id="answer-one">
-                    </div>
-                    <div class="form-group">
-                        <label for="answer-two">
-                            <strong>Enter Incorrect Answer</strong>
-                        </label><br />
-                        <input type="text" id="answer-two">
-                    </div>
-                    <div class="form-group">
-                        <label for="answer-three">
-                            <strong>Enter Incorrect Answer</strong>
-                        </label><br />
-                        <input type="text" id="answer-three">
-                    </div>
-                    <div class="form-group">
-                        <label for="answer-four">
-                            <strong>Enter Incorrect Answer</strong>
-                        </label><br />
-                        <input type="text" id="answer-four">
-                    </div>
-                    <p id="question-error-area"></p>
-                    <button type="button" id="submit-btn">Submit Question</button>
-                </form>
+                </section>
             </div>
-        </section>
-        <section id="test-render-area"></section>
-    </main>
-    <footer>
-        <div id="footer-legal">
-            <div>
-                <a href="./pages/legal/terms.html">Terms and Conditions</a>
-            </div>
-            <div>
-                <a href="./pages/legal/privacy.html">Privacy Policy</a>
+            <div class="column is-half">
+                <section id="test-render-area" class="ml-6"></section>
             </div>
         </div>
-        <div>
+    </main>
+    <footer class="is-size-5">
+        <div id="footer-legal" class="mb-3">
+            <div>
+                <a href="./pages/legal/terms.html" class="has-text-dark">Terms and Conditions</a>
+            </div>
+            <div>
+                <a href="./pages/legal/privacy.html" class="has-text-dark">Privacy Policy</a>
+            </div>
+        </div>
+        <div id="footer-built-by">
             <p>
-                Built by <a href="https://claeysdev.com" target="_blank">ClaeysDev</a>
+                Built by <a href="https://claeysdev.com" target="_blank" class="has-text-dark">ClaeysDev</a>
             </p>
         </div>
     </footer>
