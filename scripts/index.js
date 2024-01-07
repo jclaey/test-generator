@@ -194,10 +194,10 @@ const printTest = () => {
         </div>
       `
   
-      storedTest.questions.forEach(question => {
+      storedTest.questions.forEach((question, index) => {
         output += `
             <div>
-                <p>${question.id}. ${question.text}</p>
+                <p>${index + 1}. ${question.text}</p>
                 <ol type="a">
                     <li>${question.answers[0].content}</li>
                     <li>${question.answers[1].content}</li>
