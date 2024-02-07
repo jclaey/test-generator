@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-3N89NPQYZV"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-3N89NPQYZV');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Jason Claeys">
+    <meta name="description" content="A simple, easy-to-use, free spelling test generator. Create and print tests with ease. Completely free to use.">
+    <meta name="keywords" content="simple test generator, free test generator, multiple choice test generator, create multiple versions of a test, randomized test, print test, create and print test">
+    <link rel="stylesheet" href="../../stylesheets/bulma/css/bulma.min.css">
+    <link rel="stylesheet" href="../../stylesheets/spelling.css">
+    <!-- <link rel="stylesheet" href="stylesheets/mobile.css"> -->
+    <title>Simple Test Generator | Spelling Test Generator</title>
+</head>
+<body>
+    <header>
+        <div id="nav" class="mb-6">
+            <div id="nav-left">
+                <button id="instructions-btn">Instructions</button>
+            </div>
+            <div id="nav-right">
+                <a href="https://simplechecklistgenerator.com" target="_blank" class="button is-link is-light">Checklist Generator</a>
+                <a href="https://simpletestgenerator.com" target="_blank" class="button is-link is-light">Multiple Choice Test Generator</a>
+            </div>
+        </div>
+        <div class="mb-6">
+            <div id="brand" style="display: flex; align-items: center;" class="mb-4">
+                <figure class="image is-96x96">
+                    <img src="../../images/simple_test_logo.png" alt="Simple Test Generator logo" height="50" width="50">
+                </figure>
+                <h1 class="title is-1">Simple Spelling Test Generator</h1>
+            </div>
+            <h2 class="subtitle is-2">The easiest spelling test generator on the internet.</h2>
+            <h5 class="subtitle is-5">Create and print spelling tests completely free! Create and print multiple choice tests free <a href="https://simpletestgenerator.com" target="_blank">here</a> and checklists <a href="https://simplechecklistgenerator.com" target="_blank">here</a>.</h5>
+        </div>
+    </header>
+    <main class="mb-6">
+        <div class="columns">
+            <div class="column is-half">
+                <section id="test-form-area" class="field">
+                    <div>
+                        <h2 class="subtitle is-2">Test Form</h2>
+                        <form id="word-form">
+                            <div class="field">
+                                <label for="title-input" class="label">
+                                    Add Test Title
+                                </label>
+                                <div class="control">
+                                    <input type="text" id="title-input" class="input">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="words" class="label">
+                                    <strong>Enter Spelling Words</strong>
+                                </label>
+                                <div class="control">
+                                    <small id="word-error-area"></small>
+                                    <textarea class="textarea" placeholder="Enter comma separated list of words..." id="words"></textarea>
+                                    <small>E.g. meteor, asteroid, planet</small>
+                                </div>
+                            </div>
+                            <p id="word-error-area"></p>
+                            <button type="button" id="submit-btn" class="button">Submit Test</button>
+                        </form>
+                    </div>
+                </section>
+            </div>
+            <div class="column is-half">
+                <section id="test-render-area" class="ml-6"></section>
+            </div>
+        </div>
+    </main>
+    <footer class="is-size-5">
+        <div id="footer-legal" class="mb-3">
+            <div>
+                <a href="../legal/terms.html" class="has-text-dark">Terms and Conditions</a>
+            </div>
+            <div>
+                <a href="../legal/privacy.html" class="has-text-dark">Privacy Policy</a>
+            </div>
+        </div>
+        <div id="footer-built-by">
+            <p>
+                Built by <a href="https://claeysdev.com" target="_blank" class="has-text-dark">ClaeysDev</a>
+            </p>
+        </div>
+    </footer>
+    <div id="instructions">
+        <span id="close-btn">&times;</span>
+        <p>Instructions:</p>
+        <p>Enter a test title in the "Add Test Title" text box.</p>
+        <p>Enter a comma separated list of spelling words into the "Enter Spelling Words" text box.</p>
+        <p>Click the "Submit Test" button.</p>
+        <p>Your spelling test will automatically generate. When you're ready to print your test, click the "Print Test" button.</p>
+        <p>To generate an additional version of your test, click the "Randomize Questions" button.</p>
+    </div>
+
+    <script type="module" src="../../scripts/spelling.js"></script>
+    <script src="../../scripts/sidebar.js"></script>
+</body>
+</html>
