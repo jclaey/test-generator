@@ -79,6 +79,20 @@ const createTestQuestion = e => {
 }
 
 const renderTest = () => {
+    //
+
+    // if (!localStorage.getItem('simpleTests')) {
+    //     const tests = []
+
+    //     localStorage.setItem('simpleTests', JSON.stringify(simpleTests))
+    // }
+
+    // const storedTest = JSON.parse(localStorage.getItem('simpleTests'))[0]
+
+    // let output = ''
+
+    //
+
     if (!localStorage.getItem('test')) {
         const test = {
             title: '',
@@ -194,10 +208,10 @@ const printTest = () => {
         </div>
       `
   
-      storedTest.questions.forEach((question, index) => {
+      storedTest.questions.forEach(question => {
         output += `
             <div>
-                <p>${index + 1}. ${question.text}</p>
+                <p>${question.id}. ${question.text}</p>
                 <ol type="a">
                     <li>${question.answers[0].content}</li>
                     <li>${question.answers[1].content}</li>

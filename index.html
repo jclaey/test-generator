@@ -14,7 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Jason Claeys">
     <meta name="description" content="A simple, easy-to-use, free multiple choice test generator. Create and print tests with ease. Completely free to use.">
-    <meta name="keywords" content="simple test generator, free test generator, multiple choice test generator, create multiple versions of a test, randomize answer choices, print test, create and print test">
+    <meta name="keywords" content="simple test generator, free test generator, multiple choice test generator, create multiple versions of a test, randomized test, print test, create and print test">
     <link rel="stylesheet" href="stylesheets/bulma/css/bulma.min.css">
     <link rel="stylesheet" href="stylesheets/index.css">
     <!-- <link rel="stylesheet" href="stylesheets/mobile.css"> -->
@@ -23,8 +23,13 @@
 <body>
     <header>
         <div id="instructions-btn-area" class="mb-6">
-            <button id="instructions-btn">Instructions</button>
-            <a href="https://simplechecklistgenerator.com" target="_blank" class="button is-link is-light">Checklist Generator</a>
+            <div id="left">
+                <button id="instructions-btn">Instructions</button>
+            </div>
+            <div id="right">
+                <a href="./pages/spelling_test/index.html" target="_blank" class="button is-link is-light">Spelling Test Generator</a>
+                <a href="https://simplechecklistgenerator.com" target="_blank" class="button is-link is-light">Checklist Generator</a>
+            </div>
         </div>
         <div class="mb-6">
             <div id="brand" style="display: flex; align-items: center;" class="mb-4">

@@ -1,0 +1,104 @@
+body {
+    transition: transform 0.3s ease;
+}
+
+main {
+    margin: 0 5%;
+}
+
+header {
+    margin: 0 5%;
+}
+
+#test-form-area {
+    margin-right: 50px;
+}
+
+#test-render-area {
+    display: flex;
+    flex-direction: column;
+}
+
+/* NAV */
+
+#nav {
+    margin-top: 1rem;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+  
+#nav #instructions-btn {
+    border: none;
+    background-color: transparent;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+#nav a {
+    color: #333;
+    transition: 0.3s;
+}
+
+#nav a:hover {
+    color: #666;
+}
+  
+#nav #instructions-btn:hover {
+    color: #666;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+    height: 100px;
+    margin: 0 5rem;
+}
+
+footer #footer-built-by {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer #footer-legal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* INSTRUCTIONS */
+
+#instructions {
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 550px;
+    z-index: 1;
+    transform: translateX(-100%)
+}
+  
+#instructions p {
+    margin: 1rem;
+}
+  
+#instructions p:first-of-type {
+    font-size: 24px;
+}
+  
+#instructions span {
+    font-size: 30px;
+    position: absolute;
+    top: 0;
+    right: 25px;
+    cursor: pointer;
+}
+  
+.open-sidebar {
+    transform: translateX(300px)
+}
