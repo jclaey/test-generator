@@ -7,13 +7,13 @@ const titleInput = document.querySelector('#title-input')
 
 const createTest = () => {
     if (wordArea.value === '') {
-        wordError.innerText = 'Please enter some test words'
+        wordError.textContent = 'Please enter some test words'
         wordError.style.color = 'red'
         return
     }
 
     if (!wordArea.value.includes(',')) {
-        wordError.innerText = 'Please make sure the values you entered are separated by commas (,)'
+        wordError.textContent = 'Please make sure the values you entered are separated by commas (,)'
         wordError.style.color = 'red'
         return
     }
@@ -21,7 +21,7 @@ const createTest = () => {
     const regExp = /[^a-zA-Z,\s]/g
 
     if (wordArea.value.match(regExp) !== null) {
-        wordError.innerText = 'Please make sure the values you entered only contain letters, spaces, and commas (,)'
+        wordError.textContent = 'Please make sure the values you entered only contain letters, spaces, and commas (,)'
         wordError.style.color = 'red'
         return
     }
@@ -72,7 +72,7 @@ const renderTest = () => {
         const test = JSON.parse(localStorage.getItem('simpleSpellingTest'))
 
         renderArea.innerHTML = ''
-        renderArea.innerHTML += `<h2 style="font-size: 24px; margin-bottom: 1rem;">${test.title}</h2>`
+        renderArea.innerHTML += `<h2 style="font-size: 24px; margin-bottom: 1rem;">${sanitize(test.title)}</h2>`
 
         test.testWords.forEach((word, index) => {
             let output = `
@@ -82,7 +82,7 @@ const renderTest = () => {
     
             word.forEach((iteration, index) => {
                 output += `
-                    <p style="margin-left: 1rem">${index === 0 ? 'a.' : index === 1 ? 'b.' : index === 2 ? 'c.' : 'd.'} ${iteration}</p>
+                    <p style="margin-left: 1rem">${index === 0 ? 'a.' : index === 1 ? 'b.' : index === 2 ? 'c.' : 'd.'} ${sanitize(iteration)}</p>
                 `
             })
     
@@ -111,7 +111,7 @@ const printTest = () => {
 
     output += `
         <div style="margin: 2rem 0 2rem 0; font-family: sans-serif; font-size: 32px;">
-          <h2 style="text-align: center;" class="is-size-1">${storedTest.title}</h2>
+          <h2 style="text-align: center;" class="is-size-1">${sanitize(storedTest.title)}</h2>
         </div>
         <div>
             <p style="margin-bottom: 3rem;">Instructions: Circle the correct spelling for each word</p>
@@ -126,7 +126,7 @@ const printTest = () => {
 
         word.forEach((iteration, index) => {
             output += `
-                    <p style="margin-left: 1rem">${index === 0 ? 'a.' : index === 1 ? 'b.' : index === 2 ? 'c.' : 'd.'} ${iteration}</p>
+                    <p style="margin-left: 1rem">${index === 0 ? 'a.' : index === 1 ? 'b.' : index === 2 ? 'c.' : 'd.'} ${sanitize(iteration)}</p>
                 `
         })
     })
@@ -136,6 +136,19 @@ const printTest = () => {
     printWin.print()
     printWin.stop()
 }
+
+const sanitize = string => {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#x27;',
+        "/": '&#x2F;',
+    };
+    const reg = /[&<>"'/]/ig;
+    return string.replace(reg, (match)=>(map[match]));
+  }
 
 const randomize = () => {
     const storedTest = JSON.parse(localStorage.getItem('simpleSpellingTest'))

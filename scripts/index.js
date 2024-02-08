@@ -27,10 +27,10 @@ const addTitle = e => {
 const createTestQuestion = e => {
     e.preventDefault()
 
-    questionErrorArea.innerText = ''
+    questionErrorArea.textContent = ''
 
     if (questionInput.value === '' || answerOneInput.value === '' || answerTwoInput.value === '' || answerThreeInput.value === '' || answerFourInput.value === '') {
-        questionErrorArea.innerText = 'Error: Please fill out the entire form before submitting'
+        questionErrorArea.textContent = 'Error: Please fill out the entire form before submitting'
         questionErrorArea.style.display = 'block'
         return
     }
@@ -113,7 +113,7 @@ const renderTest = () => {
     } else {
         output += `
             <div class="mb-4">
-                <span class="is-size-4 mr-5">${storedTest.title}</span>
+                <span class="is-size-4 mr-5">${sanitize(storedTest.title)}</span>
                 <button class="delete-btn button is-danger"  id="delete-title-btn" type="button">Delete</button>
             </div>
         `
@@ -130,14 +130,14 @@ const renderTest = () => {
             output += `
                 <div class="mb-4">
                     <div>
-                        ${storedTest.questions.indexOf(question) + 1}. ${question.text}
+                        ${storedTest.questions.indexOf(question) + 1}. ${sanitize(question.text)}
                         <button type="button" class="delete-btn button is-danger is-small" data-questionid=${question.id}>Delete</button>
                     </div>
                     <ol type="a">
-                        <li style="color: ${question.answers[0].isCorrect ? 'green' : 'black'}">${question.answers[0].content}</li>
-                        <li style="color: ${question.answers[1].isCorrect ? 'green' : 'black'}">${question.answers[1].content}</li>
-                        <li style="color: ${question.answers[2].isCorrect ? 'green' : 'black'}">${question.answers[2].content}</li>
-                        <li style="color: ${question.answers[3].isCorrect ? 'green' : 'black'}">${question.answers[3].content}</li>
+                        <li style="color: ${question.answers[0].isCorrect ? 'green' : 'black'}">${sanitize(question.answers[0].content)}</li>
+                        <li style="color: ${question.answers[1].isCorrect ? 'green' : 'black'}">${sanitize(question.answers[1].content)}</li>
+                        <li style="color: ${question.answers[2].isCorrect ? 'green' : 'black'}">${sanitize(question.answers[2].content)}</li>
+                        <li style="color: ${question.answers[3].isCorrect ? 'green' : 'black'}">${sanitize(question.answers[3].content)}</li>
                     </ol>
                 </div>
             `
@@ -204,19 +204,19 @@ const printTest = () => {
     } else {
       output += `
         <div style="margin: 2rem 0 5rem 0; font-family: sans-serif; font-size: 32px;">
-          <h2 style="text-align: center;" class="is-size-1">${storedTest.title}</h2>
+          <h2 style="text-align: center;" class="is-size-1">${sanitize(storedTest.title)}</h2>
         </div>
       `
   
       storedTest.questions.forEach(question => {
         output += `
             <div>
-                <p>${question.id}. ${question.text}</p>
+                <p>${question.id}. ${sanitize(question.text)}</p>
                 <ol type="a">
-                    <li>${question.answers[0].content}</li>
-                    <li>${question.answers[1].content}</li>
-                    <li>${question.answers[2].content}</li>
-                    <li>${question.answers[3].content}</li>
+                    <li>${sanitize(question.answers[0].content)}</li>
+                    <li>${sanitize(question.answers[1].content)}</li>
+                    <li>${sanitize(question.answers[2].content)}</li>
+                    <li>${sanitize(question.answers[3].content)}</li>
                 </ol>
             </div>
         `
@@ -228,6 +228,19 @@ const printTest = () => {
       printWin.stop()
     }
 }
+
+const sanitize = string => {
+    const map = {
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#x27;',
+        "/": '&#x2F;',
+    };
+    const reg = /[&<>"'/]/ig;
+    return string.replace(reg, (match)=>(map[match]));
+  }
 
 renderTest()
 
