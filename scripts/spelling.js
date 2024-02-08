@@ -165,7 +165,7 @@ function shuffle(array) {
     return array;
 }
 
-// Switches letters around to form new incorrect spellings of word
+// Switch letters around to form new, incorrect spellings of word
 const replace = word => {
     let choices = [word]
 
@@ -198,7 +198,7 @@ const replace = word => {
     return choices
 }
 
-// Drops all duplicate letters
+// Drop duplicate letters
 const dropDuplicateLetter = word => {
     let result = word.split('')
     let left = 0
