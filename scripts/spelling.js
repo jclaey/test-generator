@@ -8,6 +8,22 @@ const titleInput = document.querySelector('#title-input')
 const createTest = () => {
     if (wordArea.value === '') {
         wordError.innerText = 'Please enter some test words'
+        wordError.style.color = 'red'
+        return
+    }
+
+    if (!wordArea.value.includes(',')) {
+        wordError.innerText = 'Please make sure the values you entered are separated by commas (,)'
+        wordError.style.color = 'red'
+        return
+    }
+
+    const regExp = /[^a-zA-Z,\s]/g
+
+    if (wordArea.value.match(regExp) !== null) {
+        wordError.innerText = 'Please make sure the values you entered only contain letters, spaces, and commas (,)'
+        wordError.style.color = 'red'
+        return
     }
 
     const wordsArray = wordArea.value.split(',')
