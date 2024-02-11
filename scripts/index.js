@@ -201,7 +201,10 @@ const printTest = () => {
     const storedTest = JSON.parse(localStorage.getItem('test'))
   
     if (storedTest.questions.length === 0) {
-      alert('Please create a test to print')
+        testRenderArea.innerHTML += `<p id="no-test-error">Please create a test to print.</p>`
+        setTimeout(() => {
+          document.querySelector('#no-test-error').style.display = 'none'
+        }, 3000)
     } else {
       output += `
         <div style="margin: 2rem 0 5rem 0; font-family: sans-serif; font-size: 32px;">

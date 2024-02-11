@@ -100,3 +100,8 @@ footer #footer-legal {
     color: #666;
     cursor: pointer;
 }
+
+#no-test-error {
+    color: red;
+    margin-top: 1rem;
+}
