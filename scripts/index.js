@@ -9,6 +9,7 @@ const testRenderArea = document.querySelector('#test-render-area')
 const addTitleBtn = document.querySelector('#add-title-btn')
 const questionErrorArea = document.querySelector('#question-error-area')
 import randomize from "./modules/randomize.mjs"
+import sanitize from "./modules/sanitize.mjs"
 
 const addTitle = e => {
     e.preventDefault()
@@ -228,19 +229,6 @@ const printTest = () => {
       printWin.stop()
     }
 }
-
-const sanitize = string => {
-    const map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#x27;',
-        "/": '&#x2F;',
-    };
-    const reg = /[&<>"'/]/ig;
-    return string.replace(reg, (match)=>(map[match]));
-  }
 
 renderTest()
 

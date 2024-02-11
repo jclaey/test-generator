@@ -4,6 +4,8 @@ const submitBtn = document.querySelector('#submit-btn')
 const renderArea = document.querySelector('#test-render-area')
 const wordError = document.querySelector('#word-error-area')
 const titleInput = document.querySelector('#title-input')
+import sanitize from "./modules/sanitize.mjs"
+import shuffle from "./modules/shuffle.mjs"
 
 const createTest = () => {
     if (wordArea.value === '') {
@@ -137,19 +139,6 @@ const printTest = () => {
     printWin.stop()
 }
 
-const sanitize = string => {
-    const map = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#x27;',
-        "/": '&#x2F;',
-    };
-    const reg = /[&<>"'/]/ig;
-    return string.replace(reg, (match)=>(map[match]));
-  }
-
 const randomize = () => {
     const storedTest = JSON.parse(localStorage.getItem('simpleSpellingTest'))
 
@@ -162,20 +151,6 @@ const randomize = () => {
     localStorage.setItem('simpleSpellingTest', JSON.stringify(storedTest))
 
     renderTest()
-}
-
-function shuffle(array) {
-    let currentIndex = array.length,  randomIndex;
-
-    while (currentIndex > 0) {
-        randomIndex = Math.floor(Math.random() * currentIndex);
-        currentIndex--;
-
-        [array[currentIndex], array[randomIndex]] = [
-        array[randomIndex], array[currentIndex]];
-    }
-
-    return array;
 }
 
 // Switch letters around to form new, incorrect spellings of word
