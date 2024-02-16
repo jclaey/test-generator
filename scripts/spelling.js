@@ -74,17 +74,17 @@ const renderTest = () => {
         const test = JSON.parse(localStorage.getItem('simpleSpellingTest'))
 
         renderArea.innerHTML = ''
-        renderArea.innerHTML += `<h2 style="font-size: 24px; margin-bottom: 1rem;">${sanitize(test.title)}</h2>`
+        renderArea.innerHTML += `<h2 id="spelling-test-title">${sanitize(test.title)}</h2>`
 
         test.testWords.forEach((word, index) => {
             let output = `
-                <div style="margin-bottom: 2rem">
+                <div id="spelling-test-choice-div">
                 <p>${index + 1}.</p>
             `
     
             word.forEach((iteration, index) => {
                 output += `
-                    <p style="margin-left: 1rem">${index === 0 ? 'a.' : index === 1 ? 'b.' : index === 2 ? 'c.' : 'd.'} ${sanitize(iteration)}</p>
+                    <p id="spelling-test-word">${index === 0 ? 'a.' : index === 1 ? 'b.' : index === 2 ? 'c.' : 'd.'} ${sanitize(iteration)}</p>
                 `
             })
     

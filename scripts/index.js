@@ -131,7 +131,7 @@ const renderTest = () => {
             output += `
                 <div class="mb-4">
                     <div>
-                        ${storedTest.questions.indexOf(question) + 1}. ${sanitize(question.text)}
+                        ${Number(storedTest.questions.indexOf(question) + 1)}. ${sanitize(question.text)}
                         <button type="button" class="delete-btn button is-danger is-small" data-questionid=${question.id}>Delete</button>
                     </div>
                     <ol type="a">
@@ -207,15 +207,15 @@ const printTest = () => {
         }, 3000)
     } else {
       output += `
-        <div style="margin: 2rem 0 5rem 0; font-family: sans-serif; font-size: 32px;">
-          <h2 style="text-align: center;" class="is-size-1">${sanitize(storedTest.title)}</h2>
+        <div id="test-title-div">
+          <h2>${sanitize(storedTest.title)}</h2>
         </div>
       `
   
       storedTest.questions.forEach(question => {
         output += `
             <div>
-                <p>${question.id}. ${sanitize(question.text)}</p>
+                <p>${Number(question.id)}. ${sanitize(question.text)}</p>
                 <ol type="a">
                     <li>${sanitize(question.answers[0].content)}</li>
                     <li>${sanitize(question.answers[1].content)}</li>
