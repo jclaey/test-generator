@@ -161,7 +161,7 @@ const replace = word => {
         let result = word.split('')
         let indexes = []
 
-        for (let i = 0; i <= 2; i++) {
+        for (let i = 0; i < 2; i++) {
             let num1 = Math.floor(Math.random() * (word.length - 1)) + 1
             let num2 = Math.floor(Math.random() * (word.length - 1)) + 1
 
