@@ -74,7 +74,7 @@ const renderTest = () => {
         const test = JSON.parse(localStorage.getItem('simpleSpellingTest'))
 
         renderArea.innerHTML = ''
-        renderArea.innerHTML += `<h2 id="spelling-test-title" class="is-size-3">${sanitize(test.title)}</h2>`
+        renderArea.innerHTML += `<h2 id="spelling-test-title" class="is-size-4 mb-4">${sanitize(test.title)}</h2>`
 
         test.testWords.forEach((word, index) => {
             let output = `
@@ -84,7 +84,7 @@ const renderTest = () => {
     
             word.forEach((iteration, index) => {
                 output += `
-                    <p id="spelling-test-word">${index === 0 ? 'a.' : index === 1 ? 'b.' : index === 2 ? 'c.' : 'd.'} ${sanitize(iteration)}</p>
+                    <p id="spelling-test-word" class="pl-5">${index === 0 ? 'a.' : index === 1 ? 'b.' : index === 2 ? 'c.' : 'd.'} ${sanitize(iteration)}</p>
                 `
             })
     
@@ -93,7 +93,7 @@ const renderTest = () => {
         })
 
         renderArea.innerHTML += `
-            <div>
+            <div class="mt-5">
                 <button type="button" class="button mb-2" id="randomize-btn">Randomize Questions</button>
             </div>
             <div>
