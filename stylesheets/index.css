@@ -19,21 +19,6 @@ header {
     flex-direction: column;
 }
 
-#brand {
-    display: flex;
-    align-items: center;
-}
-
-#test-title-div {
-    margin: 2rem 0 5rem 0;
-    font-family: sans-serif;
-    font-size: 32px;
-}
-
-#test-title-div h2 {
-    text-align: center;
-}
-
 /* FOOTER */
 
 footer {

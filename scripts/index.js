@@ -80,20 +80,6 @@ const createTestQuestion = e => {
 }
 
 const renderTest = () => {
-    //
-
-    // if (!localStorage.getItem('simpleTests')) {
-    //     const tests = []
-
-    //     localStorage.setItem('simpleTests', JSON.stringify(simpleTests))
-    // }
-
-    // const storedTest = JSON.parse(localStorage.getItem('simpleTests'))[0]
-
-    // let output = ''
-
-    //
-
     if (!localStorage.getItem('test')) {
         const test = {
             title: '',
@@ -131,7 +117,7 @@ const renderTest = () => {
             output += `
                 <div class="mb-4">
                     <div>
-                        ${Number(storedTest.questions.indexOf(question) + 1)}. ${sanitize(question.text)}
+                        ${storedTest.questions.indexOf(question) + 1}. ${sanitize(question.text)}
                         <button type="button" class="delete-btn button is-danger is-small" data-questionid=${question.id}>Delete</button>
                     </div>
                     <ol type="a">
@@ -147,6 +133,7 @@ const renderTest = () => {
         output += `
             <div>
                 <button type="button" id="randomize-btn" class="button mb-2">Randomize Questions</button>
+                <button type="button" id="clear-test-btn" class="button mb-2">Clear Test</button>
             </div>
         `
     }
@@ -161,6 +148,20 @@ const renderTest = () => {
 
     if (document.querySelector('#delete-title-btn') !== null) {
         document.querySelector('#delete-title-btn').addEventListener('click', deleteTitle)
+    }
+
+    if (document.querySelector('#clear-test-btn') !== null) {
+        document.querySelector('#clear-test-btn').addEventListener('click', e => {
+            if (localStorage.getItem('test')) {
+                const test = {
+                    title: '',
+                    questions: []
+                }
+
+                localStorage.setItem('test', JSON.stringify(test))
+                renderTest()
+            }
+        })
     }
 
     if (document.querySelector('#randomize-btn') !== null) {
@@ -201,21 +202,21 @@ const printTest = () => {
     const storedTest = JSON.parse(localStorage.getItem('test'))
   
     if (storedTest.questions.length === 0) {
-        testRenderArea.innerHTML += `<p id="no-test-error">Please create a test to print.</p>`
-        setTimeout(() => {
-          document.querySelector('#no-test-error').style.display = 'none'
-        }, 3000)
+      testRenderArea.innerHTML += `<p id="no-test-error">Please create a test to print.</p>`
+      setTimeout(() => {
+        document.querySelector('#no-test-error').style.display = 'none'
+      }, 3000)
     } else {
       output += `
-        <div id="test-title-div">
-          <h2>${sanitize(storedTest.title)}</h2>
+        <div style="margin: 2rem 0 5rem 0; font-family: sans-serif; font-size: 32px;">
+          <h2 style="text-align: center;" class="is-size-1">${sanitize(storedTest.title)}</h2>
         </div>
       `
   
       storedTest.questions.forEach(question => {
         output += `
             <div>
-                <p>${Number(question.id)}. ${sanitize(question.text)}</p>
+                <p>${question.id}. ${sanitize(question.text)}</p>
                 <ol type="a">
                     <li>${sanitize(question.answers[0].content)}</li>
                     <li>${sanitize(question.answers[1].content)}</li>

@@ -4,8 +4,8 @@ const submitBtn = document.querySelector('#submit-btn')
 const renderArea = document.querySelector('#test-render-area')
 const wordError = document.querySelector('#word-error-area')
 const titleInput = document.querySelector('#title-input')
-import sanitize from "./modules/sanitize.mjs"
 import shuffle from "./modules/shuffle.mjs"
+import sanitize from "./modules/sanitize.mjs"
 
 const createTest = () => {
     if (wordArea.value === '') {
@@ -27,6 +27,8 @@ const createTest = () => {
         wordError.style.color = 'red'
         return
     }
+
+    // Sanitize user input here
 
     const wordsArray = wordArea.value.split(',')
 
@@ -69,22 +71,24 @@ const createTest = () => {
 
 const renderTest = () => {
     if (!localStorage.getItem('simpleSpellingTest')) {
-        renderArea.innerHTML = `<p>No test yet. Please create one.</p>`
+        renderArea.innerHTML = `
+            <p style="color: red;">No test yet. Please create one.</p>
+        `
     } else {
         const test = JSON.parse(localStorage.getItem('simpleSpellingTest'))
 
         renderArea.innerHTML = ''
-        renderArea.innerHTML += `<h2 id="spelling-test-title">${sanitize(test.title)}</h2>`
+        renderArea.innerHTML += `<h2 style="font-size: 24px; margin-bottom: 1rem;">${sanitize(test.title)}</h2>`
 
         test.testWords.forEach((word, index) => {
             let output = `
-                <div id="spelling-test-choice-div">
+                <div style="margin-bottom: 2rem">
                 <p>${index + 1}.</p>
             `
     
             word.forEach((iteration, index) => {
                 output += `
-                    <p id="spelling-test-word">${index === 0 ? 'a.' : index === 1 ? 'b.' : index === 2 ? 'c.' : 'd.'} ${sanitize(iteration)}</p>
+                    <p style="margin-left: 1rem">${index === 0 ? 'a.' : index === 1 ? 'b.' : index === 2 ? 'c.' : 'd.'} ${sanitize(iteration)}</p>
                 `
             })
     
@@ -153,7 +157,7 @@ const randomize = () => {
     renderTest()
 }
 
-// Switch letters around to form new, incorrect spellings of word
+// Switches letters around to form new incorrect spellings of word
 const replace = word => {
     let choices = [word]
 
@@ -161,7 +165,7 @@ const replace = word => {
         let result = word.split('')
         let indexes = []
 
-        for (let i = 0; i <= 2; i++) {
+        for (let i = 0; i <= 1; i++) {
             let num1 = Math.floor(Math.random() * (word.length - 1)) + 1
             let num2 = Math.floor(Math.random() * (word.length - 1)) + 1
 
@@ -186,7 +190,7 @@ const replace = word => {
     return choices
 }
 
-// Drop duplicate letters
+// Drops all duplicate letters
 const dropDuplicateLetter = word => {
     let result = word.split('')
     let left = 0

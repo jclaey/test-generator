@@ -19,11 +19,6 @@ header {
     flex-direction: column;
 }
 
-#brand {
-    display: flex;
-    align-items: center;
-}
-
 /* NAV */
 
 #nav {
@@ -53,19 +48,6 @@ header {
 #nav #instructions-btn:hover {
     color: #666;
     cursor: pointer;
-}
-
-#spelling-test-title {
-    font-size: 24px;
-    margin-bottom: 1rem;
-}
-
-#spelling-test-word {
-    margin-left: 1rem;
-}
-
-#spelling-test-choice-div {
-    margin-bottom: 2rem;
 }
 
 /* FOOTER */

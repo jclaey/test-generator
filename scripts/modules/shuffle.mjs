@@ -1,4 +1,4 @@
-function shuffle(array) {
+const shuffle = array => {
     let currentIndex = array.length,  randomIndex;
 
     while (currentIndex > 0) {

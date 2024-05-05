@@ -1,4 +1,8 @@
 const sanitize = string => {
+    if (!string) {
+        return
+    }
+
     const map = {
         '&': '&amp;',
         '<': '&lt;',
